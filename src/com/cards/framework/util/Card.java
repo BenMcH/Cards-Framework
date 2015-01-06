@@ -1,4 +1,4 @@
-package com.cards.framework;
+package com.cards.framework.util;
 
 public class Card {
 
