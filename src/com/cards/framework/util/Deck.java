@@ -9,7 +9,7 @@ public class Deck {
 	
 	//Creates a standard 52 card deck
 	public Deck() {
-		deck = Card.getStandardDeck();
+		deck = Deck.getStandardDeck();
 		discardDeck = new ArrayList<Card>();
 	}
 
@@ -31,7 +31,15 @@ public class Deck {
 	}
 	
 	public void discardCard(Card card){
-		//add the card to the discard pile.
+		
+	}
+	
+	public static ArrayList<Card> getStandardDeck() {
+		ArrayList<Card> deck = new ArrayList<Card>();
+		for (int card = 1; card <= 13; card++) {
+			
+		}
+		return deck;
 	}
 
 }
