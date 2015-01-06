@@ -1,0 +1,1 @@
+This is the beginnings of a card game framework through Java.
