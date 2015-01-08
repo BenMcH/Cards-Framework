@@ -39,15 +39,20 @@ public class Deck {
 	}
 
 	/**
-	 * Draws a card and returns it
+	 * Draws a card and returns it. If all cards have been drawn, it will put
+	 * them all back into the normal deck and shuffle.
 	 * 
 	 * @return
 	 */
 	public Card drawCard() {
 		if (deck.size() > 0)
 			return deck.remove(0);
-		else
+		else {
+			deck.addAll(discardDeck);
+			discardDeck.removeAll(deck);
+			shuffle();
 			return null;
+		}
 	}
 
 	/**
@@ -56,7 +61,7 @@ public class Deck {
 	 * @param card
 	 */
 	public void discardCard(Card card) {
-		// TODO implement discard
+		discardDeck.add(card);
 	}
 
 	/**
