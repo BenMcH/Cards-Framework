@@ -1,5 +1,7 @@
 package com.cards.framework.gui.screens;
 
+import java.awt.GridBagLayout;
+
 import javax.swing.JPanel;
 
 /**
@@ -18,6 +20,7 @@ public abstract class Screen extends JPanel {
 	 * Constructs a standard screen object. Should not be used.
 	 */
 	public Screen() {
+		setLayout(new GridBagLayout());
 		addComponents();
 	}	
 	
