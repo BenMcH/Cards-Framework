@@ -1,4 +1,4 @@
-package com.cards.framework.util;
+package com.cards.framework.util.game.pieces;
 
 
 /**
@@ -6,7 +6,7 @@ package com.cards.framework.util;
  * @author Ben
  *
  */
-public class Card {
+public class Card extends GamePiece {
 	private int value;
 	private CardSuit suit;
 	

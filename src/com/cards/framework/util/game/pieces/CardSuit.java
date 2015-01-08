@@ -1,4 +1,4 @@
-package com.cards.framework.util;
+package com.cards.framework.util.game.pieces;
 
 /**
  * Handles the suits for a standard deck

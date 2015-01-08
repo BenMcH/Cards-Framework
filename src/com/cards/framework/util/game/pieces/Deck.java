@@ -1,4 +1,4 @@
-package com.cards.framework.util;
+package com.cards.framework.util.game.pieces;
 
 import java.util.ArrayList;
 import java.util.Arrays;
