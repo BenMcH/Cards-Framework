@@ -1,10 +1,18 @@
 package com.cards.framework.util.game.pieces;
 
+/**
+ * This class is for the chip game piece that will be used 
+ * for games like poker or checkers.
+ * 
+ * @author William
+ *
+ */
+
 public class Chip extends GamePiece {
 	private int value;
 	private ColorPath color;
 	
-	public static final ColorPath[] avalibleColors = {
+	public static final ColorPath[] availableColors = {
 		ColorPath.WHITE,
 		ColorPath.GREEN,
 		ColorPath.BLUE,
@@ -12,10 +20,24 @@ public class Chip extends GamePiece {
 		ColorPath.BLACK
 	};
 	
+	/**
+	 * Creates a chip that is assigned an available color then
+	 * given a default value.
+	 * 
+	 * @param value
+	 */
+	
 	public Chip(int value) {
 		this.value = value;
 		setColor(value);
+		// TODO: Make it take a color argument instead.
 	}
+	
+	/**
+	 * Sets the color of the chip based on it value.
+	 * 
+	 * @param value
+	 */
 	
 	private void setColor(int value) {
 		switch(value) {
@@ -33,6 +55,8 @@ public class Chip extends GamePiece {
 		}
 		
 	}
+	
+	// Getters //
 	
 	public int getValue() {
 		return value;
