@@ -10,13 +10,26 @@ public abstract class GamePiece extends JComponent {
 	 * 
 	 */
 	private static final long serialVersionUID = -3104508508407778567L;
-	
-	public GamePiece(){
+
+	private ColorPath color;
+	public static ColorPath[] avalibleColors;
+
+	/**
+	 * Gets the color of a given object.
+	 * 
+	 * @return color
+	 */
+
+	public ColorPath getColor() {
+		return color;
+	}
+
+	public GamePiece() {
 		super();
 	}
-	
+
 	@Override
-	public void paintComponent(Graphics g){
+	public void paintComponent(Graphics g) {
 		drawPiece(g);
 	}
 
