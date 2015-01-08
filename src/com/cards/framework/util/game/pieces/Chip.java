@@ -1,6 +1,12 @@
 package com.cards.framework.util.game.pieces;
 
+import java.awt.Graphics;
+
 public class Chip extends GamePiece {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3580233538117992826L;
 	private int value;
 	private ColorPath color;
 	
@@ -31,6 +37,10 @@ public class Chip extends GamePiece {
 	
 	public ColorPath getColor() {
 		return color;
+	}
+
+	@Override
+	public void drawPiece(Graphics g) {
 	}
 
 }

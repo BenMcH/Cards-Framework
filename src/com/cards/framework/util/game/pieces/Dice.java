@@ -1,8 +1,13 @@
 package com.cards.framework.util.game.pieces;
 
+import java.awt.Graphics;
 import java.util.Random;
 
 public class Dice extends GamePiece implements Rollable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2043788544461732929L;
 	private int dice;
 	private int size;
 	
@@ -26,6 +31,10 @@ public class Dice extends GamePiece implements Rollable{
 		Random side = new Random();
 		dice = side.nextInt(size) + 1;
 		return dice;
+	}
+
+	@Override
+	public void drawPiece(Graphics g) {
 	}
 	
 	

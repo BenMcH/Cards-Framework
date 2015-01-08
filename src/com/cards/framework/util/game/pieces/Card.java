@@ -1,5 +1,7 @@
 package com.cards.framework.util.game.pieces;
 
+import java.awt.Graphics;
+
 
 /**
  * A class for holding any standard card. Will have a child class to hold custom cards.
@@ -7,6 +9,10 @@ package com.cards.framework.util.game.pieces;
  *
  */
 public class Card extends GamePiece {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7930171190465579633L;
 	private int value;
 	private CardSuit suit;
 	
@@ -44,6 +50,10 @@ public class Card extends GamePiece {
 	@Override
 	public String toString() {
 		return getDisplayValue() + " of " + getSuit();
+	}
+
+	@Override
+	public void drawPiece(Graphics g) {
 	}
 
 }
