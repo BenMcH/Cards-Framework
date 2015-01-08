@@ -8,11 +8,11 @@ package com.cards.framework.util;
  */
 public class Card {
 	private int value;
-	private String suit;
-
+	private CardSuit suit;
+	
 	public Card(int value, CardSuit suit) {
 		this.value = value;
-		this.suit = suit.getSuit();
+		this.suit = suit;
 	}
 
 	public int getValue() {
@@ -20,7 +20,7 @@ public class Card {
 	}
 
 	public String getSuit() {
-		return suit;
+		return suit.getSuit();
 	}
 
 	public String getDisplayValue() {
