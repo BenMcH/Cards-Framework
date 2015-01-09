@@ -22,7 +22,7 @@ public class LocalGame extends BackgroundPanel {
 		super(Color.GREEN);
 		setOpaque(false);
 		setLocation(0, 0);
-		//setLayout(null);
+		// setLayout(null);
 	}
 
 	@Override
@@ -31,15 +31,13 @@ public class LocalGame extends BackgroundPanel {
 		add(card);
 		handleDrag(card);
 	}
-	
-	public void addComponent(GamePiece piece){
+
+	public void addComponent(GamePiece piece) {
 		add(piece);
 		handleDrag(piece);
 	}
 
 	public void handleDrag(final JComponent component) {
-		if(component instanceof GamePiece){
-			handleDrag(((GamePiece)component).getCanvas());
 		component.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent me) {
@@ -55,11 +53,6 @@ public class LocalGame extends BackgroundPanel {
 				component.setLocation(me.getX(), me.getY());
 			}
 		});
-		}else
-		{
-			
-		}
 	}
-	
 
 }

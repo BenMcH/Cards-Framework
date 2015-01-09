@@ -42,7 +42,10 @@ public abstract class GamePiece extends JPanel {
 
 	/**
 	 * Paint the piece onto the screen
+<<<<<<< HEAD
 	 * 
+=======
+>>>>>>> bfe9ed4fc2214662e494f889b20491381b26d4f2
 	 * @param g
 	 */
 	public abstract void drawPiece(Graphics g);

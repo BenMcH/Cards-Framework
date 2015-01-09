@@ -2,8 +2,10 @@ package com.cards.framework.util.game.pieces;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.io.File;
-import java.net.MalformedURLException;
+import java.awt.Image;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 
 /**
@@ -18,13 +20,18 @@ public class Card extends GamePiece {
 	private static final long serialVersionUID = -7930171190465579633L;
 	private int value;
 	private CardSuit suit;
+	private Image image;
 	public Card(int value, CardSuit suit) {
 		this.value = value;
 		this.suit = suit;
-		//File f = new File();//("/assets/photos/cards/card" + suit.getSuit() + getDisplayValue() + ".svg");
-		setURI(Card.class.getResource("/assets/photos/playingCards.svg").toString());
-		
-		this.setCanvasSize(200, 200);
+		try {
+			image = ImageIO.read(Card.class.getResource("/assets/photos/cards/card" + suit.getSuit() + getDisplayValue() + ".png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		setPreferredSize(new Dimension(140,190));
+		setMinimumSize(new Dimension(140,190));
+		setMaximumSize(new Dimension(140,190));
 		
 	}
 
@@ -71,12 +78,12 @@ public class Card extends GamePiece {
 		return getDisplayValue() + " of " + getSuit();
 	}
 
+	/**
+	 * Documentation in the GamePiece Class
+	 */
 	@Override
 	public void drawPiece(Graphics g) {
 		g.fillRect(0, 0, getWidth(), getHeight());
 	}
 	
-	
-	
-
 }
