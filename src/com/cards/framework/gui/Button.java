@@ -13,6 +13,12 @@ public class Button extends JLabel {
 	 */
 	private static final long serialVersionUID = 8345716504294723050L;
 
+	/**
+	 * Creates a Button out of a JLabel, allowing it to be styled with a background image easier
+	 * @param text
+	 * @param image
+	 * @param font
+	 */
 	public Button(String text, Icon image, Font font) {
 		super(text, image, CENTER);
 		setFont(font);

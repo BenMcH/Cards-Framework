@@ -14,6 +14,10 @@ public class BackgroundPanel extends Screen {
 
 	private Color color;
 
+	/**
+	 * Given a color passed to it, it will create a nice background behind the components
+	 * @param i
+	 */
 	public BackgroundPanel(Color i) {
 		super();
 		this.color = i;

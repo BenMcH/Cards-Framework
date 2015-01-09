@@ -6,10 +6,11 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.IOException;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+
+import com.cards.framework.gui.Window;
 
 import com.cards.framework.gui.Button;
 
@@ -26,14 +27,12 @@ public class MainMenu extends BackgroundPanel {
 	 */
 	private static final long serialVersionUID = 4309734098114374229L;
 
-	public MainMenu() throws IOException {
+	public MainMenu() {
 		super(new Color(115, 205, 75));
-		setOpaque(false);
 	}
 
 	@Override
 	public void addComponents() {
-
 		GridBagConstraints con = new GridBagConstraints();
 		con.anchor = GridBagConstraints.BASELINE;
 		con.insets = new Insets(5, 5, 5, 5);
@@ -43,6 +42,13 @@ public class MainMenu extends BackgroundPanel {
 		con.fill = GridBagConstraints.HORIZONTAL;
 		Icon button = new ImageIcon(MainMenu.class.getResource("/assets/photos/blue_button_normal.png"));
 		Button play = new Button("Play", button, font);
+		play.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e){
+				Window.window.setScreen(new LocalGame());
+				System.out.println("Click");
+			}
+		});
 		add(play, con);
 		con.gridy++;
 		Button multiplayer = new Button("Multiplayer", button, font);

@@ -1,7 +1,5 @@
 package com.cards.framework.gui;
 
-import java.io.IOException;
-
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 
@@ -25,7 +23,7 @@ public class Window extends JFrame {
 	private final KeyboardListener keyBoardListener;
 	private final MouseListener mouseListener;
 	public static Window window;
-	
+
 	public Window() {
 		super("Cards");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -33,7 +31,6 @@ public class Window extends JFrame {
 		mouseListener = new MouseListener();
 		Window.window = this;
 	}
-	
 
 	/**
 	 * Returns the keyboard listener
@@ -60,6 +57,8 @@ public class Window extends JFrame {
 	 */
 	public void setScreen(Screen screen) {
 		this.setContentPane(screen);
+		revalidate();
+		repaint();
 	}
 
 	public static void main(String[] args) {
@@ -69,11 +68,7 @@ public class Window extends JFrame {
 			e.printStackTrace();
 		}
 		Window window = new Window();
-		try {
-			window.setScreen(new MainMenu());
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		window.setScreen(new MainMenu());
 		window.setSize(1280, 720);
 		window.setVisible(true);
 	}

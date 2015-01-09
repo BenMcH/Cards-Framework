@@ -1,6 +1,9 @@
 package com.cards.framework.util.game.pieces;
 
+import java.awt.Dimension;
 import java.awt.Graphics;
+import java.io.File;
+import java.net.MalformedURLException;
 
 
 /**
@@ -15,20 +18,36 @@ public class Card extends GamePiece {
 	private static final long serialVersionUID = -7930171190465579633L;
 	private int value;
 	private CardSuit suit;
-	
 	public Card(int value, CardSuit suit) {
 		this.value = value;
 		this.suit = suit;
+		//File f = new File();//("/assets/photos/cards/card" + suit.getSuit() + getDisplayValue() + ".svg");
+		setURI(Card.class.getResource("/assets/photos/playingCards.svg").toString());
+		
+		this.setCanvasSize(200, 200);
+		
 	}
 
+	/**
+	 * Returns the numerical value of the card (1-13) Ace low
+	 * @return
+	 */
 	public int getValue() {
 		return value;
 	}
 
+	/**
+	 * Returns the string representation of the suit.
+	 * @return
+	 */
 	public String getSuit() {
 		return suit.getSuit();
 	}
 
+	/**
+	 * returns the number or letter for display. E.G. "K" for king
+	 * @return
+	 */
 	public String getDisplayValue() {
 		if (value > 1 && value < 11)
 			return value + "";
@@ -54,6 +73,10 @@ public class Card extends GamePiece {
 
 	@Override
 	public void drawPiece(Graphics g) {
+		g.fillRect(0, 0, getWidth(), getHeight());
 	}
+	
+	
+	
 
 }

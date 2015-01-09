@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry excluding="src/" kind="src" path=""/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/Ben/Desktop/batik-1.7/lib/batik-swing.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ben/Desktop/batik-1.7/lib/xerces_2_5_0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ben/Desktop/batik-1.7/lib/xml-apis-ext.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ben/Desktop/batik-1.7/batik.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
