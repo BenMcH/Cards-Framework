@@ -65,17 +65,15 @@ public class Deck {
 	}
 
 	/**
-	 * Returns an arraylist of cards that is a standard deck of cards
+	 * Returns an Array List of cards that is a standard deck of cards
 	 * 
 	 * @return
 	 */
 	public static ArrayList<Card> getStandardDeck() {
 		ArrayList<Card> deck = new ArrayList<Card>();
 		for (int card = 1; card <= 13; card++) {
-			deck.add(new Card(card, CardSuit.CLUBS));
-			deck.add(new Card(card, CardSuit.SPADES));
-			deck.add(new Card(card, CardSuit.HEARTS));
-			deck.add(new Card(card, CardSuit.DIAMONDS));
+			for (CardSuit suit : CardSuit.values())
+				deck.add(new Card(card, suit));
 		}
 		return deck;
 	}

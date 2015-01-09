@@ -14,24 +14,28 @@ public abstract class GamePiece extends JComponent {
 	private ColorPath color;
 	public static ColorPath[] avalibleColors;
 
+	public GamePiece() {
+		super();
+	}
+
 	/**
 	 * Gets the color of a given object.
 	 * 
 	 * @return color
 	 */
-
 	public ColorPath getColor() {
 		return color;
 	}
 
-	public GamePiece() {
-		super();
-	}
 
 	@Override
 	public void paintComponent(Graphics g) {
 		drawPiece(g);
 	}
 
+	/**
+	 * Paint the piece onto the screen
+	 * @param g
+	 */
 	public abstract void drawPiece(Graphics g);
 }
