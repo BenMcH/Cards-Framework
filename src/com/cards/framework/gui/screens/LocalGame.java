@@ -18,6 +18,9 @@ public class LocalGame extends BackgroundPanel {
 	 */
 	private static final long serialVersionUID = -4467081789954538980L;
 
+	/**
+	 * Creates a local game
+	 */
 	public LocalGame() {
 		super(Color.GREEN);
 		setOpaque(false);
@@ -32,11 +35,23 @@ public class LocalGame extends BackgroundPanel {
 		handleDrag(card);
 	}
 
+	/**
+	 * A method for adding game pieces to the board after creation. This will
+	 * allow for the "Sandbox" feel
+	 * 
+	 * @param piece
+	 */
 	public void addComponent(GamePiece piece) {
 		add(piece);
 		handleDrag(piece);
 	}
 
+	/**
+	 * This method allows the different game pieces to be dragged around the
+	 * screen.
+	 * 
+	 * @param component
+	 */
 	public void handleDrag(final JComponent component) {
 		component.addMouseListener(new MouseAdapter() {
 			@Override

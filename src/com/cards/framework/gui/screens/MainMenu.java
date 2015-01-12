@@ -41,12 +41,13 @@ public class MainMenu extends BackgroundPanel {
 		Font font = new Font("Arial", Font.BOLD, 28);
 		con.fill = GridBagConstraints.HORIZONTAL;
 		Icon button = new ImageIcon(MainMenu.class.getResource("/assets/photos/blue_button_normal.png"));
+		Icon pressed = new ImageIcon(MainMenu.class.getResource("/assets/photos/blue_button_pressed.png"));
+		
 		Button play = new Button("Play", button, font);
 		play.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
 				Window.window.setScreen(new LocalGame());
-				System.out.println("Click");
 			}
 		});
 		add(play, con);
@@ -65,5 +66,9 @@ public class MainMenu extends BackgroundPanel {
 				System.exit(0);
 			}
 		});
+		play.setPressedImage(pressed);
+		multiplayer.setPressedImage(pressed);
+		options.setPressedImage(pressed);
+		exit.setPressedImage(pressed);
 	}
 }
