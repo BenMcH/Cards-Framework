@@ -1,6 +1,5 @@
 package com.cards.framework.util.game.pieces;
 
-import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.io.IOException;
@@ -32,9 +31,7 @@ public class Card extends GamePiece {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		setPreferredSize(new Dimension(140,190));
-		setMinimumSize(new Dimension(140,190));
-		setMaximumSize(new Dimension(140,190));
+		setAbsoluteSize(140, 190);
 		
 	}
 
@@ -52,6 +49,22 @@ public class Card extends GamePiece {
 	 */
 	public String getSuit() {
 		return suit.getSuit();
+	}
+	
+	
+	/**
+	 * Will flip the current card to its other side
+	 */
+	public void filpCard() {
+		front = !front;
+	}
+	
+	/**
+	 * Checks if the card is facing the front
+	 * @return
+	 */
+	public boolean isFront() {
+		return front;
 	}
 
 	/**

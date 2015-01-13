@@ -50,6 +50,14 @@ public class Deck {
 			return null;
 		}
 	}
+	
+	/**
+	 * Returns the size of the current deck
+	 * @return
+	 */
+	public int getSize() {
+		return deck.size();
+	}
 
 	/**
 	 * Returns an Array List of cards that is a standard deck of cards
