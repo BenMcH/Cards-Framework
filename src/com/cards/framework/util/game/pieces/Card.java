@@ -21,9 +21,12 @@ public class Card extends GamePiece {
 	private int value;
 	private CardSuit suit;
 	private Image image;
+	private boolean front;
+	
 	public Card(int value, CardSuit suit) {
 		this.value = value;
 		this.suit = suit;
+		front = true;
 		try {
 			image = ImageIO.read(Card.class.getResource("/assets/photos/cards/card" + suit.getSuit() + getDisplayValue() + ".png"));
 		} catch (IOException e) {

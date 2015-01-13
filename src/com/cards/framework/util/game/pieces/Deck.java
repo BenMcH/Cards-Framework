@@ -11,14 +11,13 @@ import java.util.Random;
  */
 public class Deck {
 
-	private ArrayList<Card> deck, discardDeck;
+	private ArrayList<Card> deck;
 
 	/**
 	 * Creates a standard 52 card deck
 	 */
 	public Deck() {
 		deck = Deck.getStandardDeck();
-		discardDeck = new ArrayList<Card>();
 	}
 
 	/**
@@ -48,20 +47,8 @@ public class Deck {
 		if (deck.size() > 0)
 			return deck.remove(0);
 		else {
-			deck.addAll(discardDeck);
-			discardDeck.removeAll(deck);
-			shuffle();
 			return null;
 		}
-	}
-
-	/**
-	 * Puts a card into the discard pile
-	 * 
-	 * @param card
-	 */
-	public void discardCard(Card card) {
-		discardDeck.add(card);
 	}
 
 	/**
