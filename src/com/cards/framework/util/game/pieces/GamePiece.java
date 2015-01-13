@@ -17,6 +17,9 @@ public abstract class GamePiece extends JComponent {
 
 	public GamePiece() {
 		super();
+		this.setLocation(0, 0);
+		setAbsoluteSize(100, 100);
+		this.setBounds(0, 0, 100, 100);
 	}
 
 	/**
@@ -45,5 +48,12 @@ public abstract class GamePiece extends JComponent {
 		setPreferredSize(dim);
 		setMinimumSize(dim);
 		setMaximumSize(dim);
+	}
+
+	public void setAbsoluteSize(int width, int height) {
+		Dimension size = new Dimension(width, height);
+		setMinimumSize(size);
+		setPreferredSize(size);
+		setMaximumSize(size);
 	}
 }

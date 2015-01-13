@@ -23,16 +23,18 @@ public class LocalGame extends BackgroundPanel {
 	 */
 	public LocalGame() {
 		super(Color.GREEN);
+		//setLayout()
 		setOpaque(false);
 		setLocation(0, 0);
-		// setLayout(null);
+		//setLayout(null);
 	}
 
 	@Override
 	public void addComponents() {
 		Card card = new Card(1, CardSuit.SPADES);
-		add(card);
+		addComponent(card);
 		handleDrag(card);
+		setLayout(null);
 	}
 
 	/**
@@ -42,7 +44,9 @@ public class LocalGame extends BackgroundPanel {
 	 * @param piece
 	 */
 	public void addComponent(GamePiece piece) {
+		piece.setBounds(getWidth()/2-piece.getWidth()/2, getHeight()/2-piece.getHeight()/2, piece.getWidth(), piece.getHeight());
 		add(piece);
+		
 		handleDrag(piece);
 	}
 

@@ -83,6 +83,7 @@ public class Card extends GamePiece {
 	 */
 	@Override
 	public void drawPiece(Graphics g) {
+		System.out.println(getLocation());
 		g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
 	}
 	
