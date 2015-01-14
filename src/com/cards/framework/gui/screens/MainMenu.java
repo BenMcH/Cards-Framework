@@ -4,15 +4,19 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.beans.PropertyChangeListener;
 
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import com.cards.framework.gui.Window;
-
 import com.cards.framework.gui.Button;
+import com.cards.framework.gui.Window;
+import com.cards.framework.util.listeners.KeyboardListener;
 
 /**
  * The main menu
@@ -26,7 +30,7 @@ public class MainMenu extends BackgroundPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = 4309734098114374229L;
-
+	private KeyboardListener listnener;
 	public MainMenu() {
 		super(new Color(115, 205, 75));
 	}

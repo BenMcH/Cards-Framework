@@ -23,6 +23,7 @@ public class Card extends GamePiece {
 	private boolean front;
 	
 	public Card(int value, CardSuit suit) {
+		super();
 		this.value = value;
 		this.suit = suit;
 		front = true;
@@ -32,7 +33,7 @@ public class Card extends GamePiece {
 			e.printStackTrace();
 		}
 		setAbsoluteSize(140, 190);
-		
+		setBounds(0, 0, 140, 190);
 	}
 
 	/**
@@ -99,7 +100,6 @@ public class Card extends GamePiece {
 	 */
 	@Override
 	public void drawPiece(Graphics g) {
-		System.out.println(getLocation());
 		g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
 	}
 	

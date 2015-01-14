@@ -56,4 +56,8 @@ public abstract class GamePiece extends JComponent {
 		setPreferredSize(size);
 		setMaximumSize(size);
 	}
+	
+	public void setScale(double percent){
+		
+	}
 }

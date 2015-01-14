@@ -4,6 +4,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.HashMap;
 
+import com.cards.framework.util.GameKeyEvents;
+
 
 /**
  * 
@@ -14,9 +16,16 @@ public class KeyboardListener implements KeyListener {
 	
 	HashMap<Integer, Boolean> keys = new HashMap<>();
 	
+	private GameKeyEvents events;
 	
+	public KeyboardListener(GameKeyEvents events) {
+		this.events = events;
+	}
+
 	@Override
 	public void keyPressed(KeyEvent event) {
+		System.out.println("Here");
+		events.handleKeyEvent(event.getKeyCode());
 		keys.put(event.getKeyCode(), true);
 	}
 	

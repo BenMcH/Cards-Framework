@@ -20,35 +20,14 @@ public class Window extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = -6933979738614649740L;
-	private final KeyboardListener keyBoardListener;
-	private final MouseListener mouseListener;
 	public static Window window;
 
 	public Window() {
 		super("Cards");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		keyBoardListener = new KeyboardListener();
-		mouseListener = new MouseListener();
 		Window.window = this;
 	}
 
-	/**
-	 * Returns the keyboard listener
-	 * 
-	 * @return
-	 */
-	public KeyboardListener getKeyboardListener() {
-		return keyBoardListener;
-	}
-
-	/**
-	 * Returns the mouse listener
-	 * 
-	 * @return
-	 */
-	public MouseListener getMouseListener() {
-		return mouseListener;
-	}
 
 	/**
 	 * Replaces the Screen that is shown
@@ -71,5 +50,6 @@ public class Window extends JFrame {
 		window.setScreen(new MainMenu());
 		window.setSize(1280, 720);
 		window.setVisible(true);
+		window.setResizable(false);
 	}
 }
